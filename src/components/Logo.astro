@@ -1,9 +1,18 @@
 ---
-import { SITE } from 'astrowind:config';
+import companylogo from '~/assets/images/company_logo_nobg.svg'
+import { Picture } from 'astro:assets'
 ---
 
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  🚀 {SITE?.name}
+   <Picture
+            src={companylogo}
+            alt="Company Logo"
+            width="100"
+            sizes="(max-width: 10px) 10vw, 20px"
+            loading="eager"
+            format="avif"
+          />
 </span>
+ 
