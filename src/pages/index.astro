@@ -4,14 +4,13 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
+import Steps from '~/components/widgets/Steps3.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
+import { Icon } from 'astro-icon/components'
+import { locate } from '@iconify/json';
 const metadata = {
   title: 'QA365 - Automate Testing',
   ignoreTitleTemplate: true,
@@ -58,31 +57,32 @@ const metadata = {
     subtitle="One of the most professional and comprehensive testing solutions on the market. Let us handle the software testing for you!"
     items={
     [
-  {
-    title: 'Reduce Costs',
+    {
+    title: 'Automated Testing',
     description:
-      'enhance the QA process of front-end applications by handling every aspect of testing, from ticket creation to final deployment—all in one platform.',
-    icon: 'tabler:brand-tailwind',
+      'Never manually test your application again. QA365 uses cutting-edge software to test your frontend applications.',
+    icon: 'tabler:plug-connected',
+  },
+  {
+    title: 'Reduced Costs',
+    description:
+      'Instead of paying for expensive manual labor, QA365 can automate your testing process for a small fee.',
+    icon: 'tabler:coin-bitcoin',
   },
 
   {
-    title: 'Improve Your Code Quality',
+    title: 'Better Code Quality',
     description:
       'Increase your software quality and make testing an integral part of your development process.',
     icon: 'tabler:crown',
   },
   {
-    title: 'Save More Time',
+    title: 'More Time',
     description:
-      'Cut costs and accelerate development with instant software feedback—eliminate the wait for ticket verification.',
-    icon: 'tabler:coin-bitcoin',
+      'Accelerate development with instant software feedback and eliminate the wait for ticket verification.',
+    icon: 'tabler:clock',
   },
-  {
-    title: 'Jira Integration',
-    description:
-      'Seamlessly integrate QA365 into your ticket system by installing our app from the Jira Marketplace.',
-    icon: 'tabler:plug-connected',
-  },
+  
   {
     title: 'Reporting',
     description:
@@ -105,7 +105,7 @@ const metadata = {
       title: 'Step 1: <span class="font-medium">Book A Call</span>',
       description:
         "Create your account and gain immediate access to our platform. <span class='font-bold'>No upfront costs!</span> Our team will personally reach out to guide you through every step.",
-      icon: 'tabler:package',
+      icon: 'tabler:calendar-stats',
     },
     {
       title: 'Step 2: <span class="font-medium">Automate & Deploy</span>',
@@ -117,40 +117,55 @@ const metadata = {
       title: 'Step 3: <span class="font-medium">Save Time & Money</span>',
       description:
         "We’ll continue to offer support, helping you refine your testing workflows as your projects grow. Your success is our priority.",
-      icon: 'tabler:user-check',
+      icon: 'tabler:businessplan',
     },
   ]}
-  image={{
-    src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-    alt: 'Steps image',
-  }}
-/>
+  />
 
-  <!-- Content Widget **************** -->
+  <!-- Steps Supported Stacks ****************** -->
+  <div class="mt-16">
+    <h2 class="text-center text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Works with your technologies</h2>
+    <div class="marquee marquee--8">
+      <Icon class="size-8 md:size-12 marquee__item" name="logos:react" />
+      <Icon class="size-8 md:size-12 marquee__item" name="logos:vue" />
+      <Icon class="size-8 md:size-12 marquee__item" name="logos:angular-icon" />
+      <Icon class="size-8 md:size-12 marquee__item" name="logos:svelte-icon" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:solid" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:preact" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:backbone-icon" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:javascript" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:html-5" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:css-3" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:tailwindcss-icon" />
+      <Icon class="size-8 md:size-14 marquee__item" name="logos:nextjs-icon" />
+  </div>
+  </div>
 
+  
   <Content
     isReversed
     tagline="Inside"
     title="QA365's Blueprint: Fun Meets Functionality!"
     items={[
       {
-        title: 'Grow as fast as AI',
+        title: 'Automated Visual Testing and Anomaly Detection',
         description:
-          'We take care of all updates and use the best AI to help you scale your business. By integrating our solution, you automatically use state of the art models at any time!',
+          'Automatically compare screenshots of tested interfaces to detect visual regressions (misalignment, color, size, etc.), flagging anomalies instantly.',
       },
       {
-        title: 'Protect Your Sensible Information',
+        title: 'Integration with CI/CD Pipelines for Continuous Testing',
         description:
-          'As a company based in Germany - Data Privacy is the most important requirement to guarantee. Your information will never be outside the testing environment.',
+          'QA365 can integrate seamlessly with CI/CD tools to initiate tests automatically after every code commit, and it provides feedback in real-time.',
       },
       {
-        title: 'Train your own expert',
-        description: `We train an AI to become an expert about your software helping to test and make improvments.`,
-      },
+        title: 'Customizable Testing',
+        description: `Define and fine-tune your testing criteria to fit the specific needs of your application, ensuring tailored testing for every project.`,
+      }
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/hero/rocket_1280.png',
       alt: 'Colorful Image',
+      sizes: '(max-width: 540px) 100vw, 640px',
     }}
   >
     <Fragment slot="content">
@@ -163,8 +178,7 @@ const metadata = {
     </Fragment>
   </Content>
   
-  <!-- Steps Widget ****************** -->
-
+  
 
   <!-- Features2 Widget ************** -->
 
@@ -233,55 +247,67 @@ const metadata = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
+    title="Explore Our Blog for the Latest in Automated Testing"
+    information={`Our blog offers insights, guides, and best practices to help you master automated testing with QA365.
+                        Each article is crafted to enhance your understanding of AI-driven testing, integration with tools like Jira, and other essential knowledge for streamlining your QA processes.
+                        Dive in and stay updated on the latest advancements in software testing with QA365.
                 `}
-  />
+/>
+
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    subtitle="Dive into the following questions to gain insights into the powerful features that QA365 offers and how it can elevate your web development journey."
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Why choose QA365?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'QA365 is an innovative AI-powered solution designed to automate frontend testing, saving your team time and reducing costs. Integrated seamlessly with Jira, QA365 provides fast, accurate testing results, image-based reporting, and even GIFs of tested content directly within your tickets.',
       },
       {
-        title: 'What do I need to start?',
+        title: 'What are the prerequisites for getting started with QA365?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'Simply sign up, integrate QA365 with your Jira account, and configure it to your preferred testing tools. With no special hardware or additional software required, you’re ready to start testing in just a few clicks.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'How do I install QA365 in Jira?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'QA365 is available in the Jira Marketplace. Once installed, connect it to your project and choose your preferred test settings. The user-friendly interface guides you through each step to simplify installation.',
       },
       {
-        title: "What's something that you don't understand?",
+        title: 'How does QA365 ensure data privacy?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          'Based in Germany, QA365 places high importance on data privacy, fully adhering to GDPR. Your testing data is kept within a secure environment, with no risk of unauthorized access.',
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'What integrations does QA365 support?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          'In addition to Jira, QA365 integrates with a wide range of testing and development tools, allowing you to tailor your testing setup to meet your team’s specific needs.',
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: 'What makes QA365’s reporting unique?',
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          'QA365 delivers detailed, actionable reports with insights on potential issues and suggested improvements. Visual reporting features include screenshots and GIFs, offering a clear view of each test’s outcomes for efficient problem-solving.',
+      },
+      {
+        title: 'Can QA365 adapt to my software as it evolves?',
+        description:
+          'Absolutely. QA365 continuously trains an AI model specifically on your software’s functionality, ensuring that it grows in expertise as your application evolves, leading to more accurate and contextual testing results over time.',
+      },
+      {
+        title: 'How does QA365 help accelerate development?',
+        description:
+          'By providing instant feedback and removing the wait time for ticket verification, QA365 enables developers to address issues on the spot, speeding up the development cycle and improving overall product quality.',
       },
     ]}
+
   />
 
-  <!-- Stats Widget ****************** -->
+  <!-- Stats Widget ******************
 
   <Stats
     stats={[
@@ -291,27 +317,129 @@ const metadata = {
       { title: 'Users', amount: '48.4K' },
     ]}
   />
-
+ -->
   <!-- CallToAction Widget *********** -->
-
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: 'Book a Demo',
+        href: 'https://calendly.com/qa365/unlock-qa365-first-look', // Replace with your actual demo link
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:calendar-event',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      QA365&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Effortless Testing</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Discover how QA365 can transform your testing process.<br class="hidden md:inline" /> Start saving time and improving quality now!
     </Fragment>
-  </CallToAction>
+</CallToAction>
+
 </Layout>
+
+<style>
+  .marquee {
+  display: flex;
+  block-size: var(--marquee-item-height);
+  margin-block: var(--marquee-item-height);
+  position: relative;
+  overflow-x: hidden;
+  mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+
+.marquee--8 {
+  --marquee-item-width: 80px;
+  --marquee-item-height: 80px;
+  --marquee-duration: 12s;
+  --marquee-items: 12;
+}
+
+.marquee__item {
+  --marquee-item-offset: max(
+    calc(var(--marquee-item-width) * var(--marquee-items)),
+    calc(100% + var(--marquee-item-width))
+  );
+  --marquee-delay: calc(var(--marquee-duration) / var(--marquee-items) * (var(--marquee-items) - var(--marquee-item-index)) * -1);
+  position: absolute;
+  inset-inline-start: var(--marquee-item-offset);
+  transform: translateX(-50%);
+  animation: go linear var(--marquee-duration) var(--marquee-delay, 0s) infinite;
+}
+
+.marquee__item:nth-child(4n) {
+  border-top-right-radius: 1rem;
+}
+
+.marquee__item:nth-child(4n + 1) {
+  border-bottom-right-radius: 1rem;
+}
+
+.marquee__item:nth-child(4n + 2) {
+  border-bottom-left-radius: 1rem;
+}
+
+.marquee__item:nth-child(4n + 3) {
+  border-top-left-radius: 1rem;
+}
+
+.marquee--8 .marquee__item:nth-of-type(1) {
+  --marquee-item-index: 1;
+}
+
+.marquee--8 .marquee__item:nth-of-type(2) {
+  --marquee-item-index: 2;
+}
+
+.marquee--8 .marquee__item:nth-of-type(3) {
+  --marquee-item-index: 3;
+}
+
+.marquee--8 .marquee__item:nth-of-type(4) {
+  --marquee-item-index: 4;
+}
+
+.marquee--8 .marquee__item:nth-of-type(5) {
+  --marquee-item-index: 5;
+}
+
+.marquee--8 .marquee__item:nth-of-type(6) {
+  --marquee-item-index: 6;
+}
+
+.marquee--8 .marquee__item:nth-of-type(7) {
+  --marquee-item-index: 7;
+}
+
+.marquee--8 .marquee__item:nth-of-type(8) {
+  --marquee-item-index: 8;
+}
+.marquee--8 .marquee__item:nth-of-type(9) {
+  --marquee-item-index: 9;
+}
+.marquee--8 .marquee__item:nth-of-type(10) {
+  --marquee-item-index: 10;
+}
+.marquee--8 .marquee__item:nth-of-type(11) {
+  --marquee-item-index: 11;
+}
+
+.marquee--8 .marquee__item:nth-of-type(12) {
+  --marquee-item-index: 12;
+}
+
+@keyframes go {
+  to {  
+    inset-inline-start: calc(var(--marquee-item-width) * -1);
+  }
+}
+</style>

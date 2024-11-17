@@ -1,0 +1,64 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Timeline from '~/components/ui/Timeline.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+import type { Steps as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  image = await Astro.slots.render('image'),
+  isReversed = false,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <div class:list={[
+    'flex flex-col gap-8 md:gap-12', // Flex column on small screens, row on medium and up
+    'md:flex-row', // Ensure flex-row on medium screens and up
+  ]}>
+    <!-- Steps Component -->
+    <div class:list={[
+      'md:py-4 md:self-center', // Vertical alignment on medium screens
+      'md:basis-1/2', // Take up half the width on medium screens and up
+      'w-full', // Full width on small screens
+    ]}>
+      <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={{
+          container: 'text-left rtl:text-right',
+          title: 'text-3xl lg:text-4xl',
+          ...((classes?.headline as object) ?? {}),
+        }}
+      />
+      <Timeline items={items} classes={classes?.items as Record<string, never>} />
+    </div>
+    <!-- Calendly Widget -->
+    <div class:list={[
+      'md:py-6 md:self-center', // Vertical alignment on medium screens
+      'md:basis-1/2', // Take up half the width on medium screens and up
+      'w-full', // Full width on small screens
+    ]}>
+      <!-- Calendly inline widget begin -->
+      <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/qa365/unlock-qa365-first-look"
+        style="min-width:320px;height:700px;"
+      ></div>
+      <!-- Calendly inline widget end -->
+    </div>
+  </div>
+</WidgetWrapper>
+
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>

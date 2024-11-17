@@ -8,6 +8,7 @@ import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
+
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
@@ -32,6 +33,7 @@ export default defineConfig({
     mdx(),
     icon({
       include: {
+        "logos": ['*'],
         tabler: ['*'],
         'flat-color-icons': [
           'template',
