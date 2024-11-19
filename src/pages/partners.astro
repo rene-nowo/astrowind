@@ -1,0 +1,133 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pricing',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    title="Become A Partner"
+    subtitle="Join forces with us and get a lifetime discount."
+  />
+  <!-- Benefits Of Becoming A Partner ******************* -->
+  <Steps
+  title="Lower Your Costs Immediately With Our Partner Program"
+  items={[
+    {
+      title: 'Step 1: <span class="font-medium">Be the first to implement our fully automated manual testing.</span>',
+      description:
+        "Schedule a call with our team to discuss the details of your web app and your testing needs. <span class='font-bold'>No upfront costs!</span> We’ll guide you through the onboarding process step by step.",
+      icon: 'tabler:star',
+    },
+    {
+      title: 'Step 2: <span class="font-medium">Automate your testing instantly.</span>',
+      description:
+        "We’ll complete your onboarding and integrate QA365 with your system. From there, our AI-driven solution will automatically start testing your tickets and generating actionable insights.",
+      icon: 'tabler:settings-automation',
+    },
+    {
+      title: 'Step 3: <span class="font-medium">Receive a lifetime discount.</span>',
+      description:
+        "Once we officially launch QA365, you’ll receive a lifetime discount as our valued partner. Plus, since onboarding is already complete, you won’t pay any setup fees—ever.",
+      icon: 'tabler:businessplan',
+    },
+  ]}
+/>
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+        {
+        variant: 'primary',
+        text: 'Become A Partner',
+        href: 'https://calendly.com/qa365/unlock-qa365-first-look', // Replace with your actual demo link
+        target: '_blank',
+        icon: 'tabler:calendar-event',
+        },
+    ]}
+    >
+    <Fragment slot="title">
+        Join Our Partner Program
+    </Fragment>
+    <Fragment slot="subtitle">
+        Discover how we can transform your testing process.<br class="hidden md:inline" /> Start saving time and improving quality now!
+    </Fragment>
+</CallToAction>
+
+  <!-- What Are The Conditions Of Becoming A Partner ******************* -->
+
+  <!-- Are There Any Risks ******************* -->
+
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+  title="Partner FAQs"
+  subtitle="You have questions? We have answers."
+  columns={1}
+  items={[
+    {
+      title: 'What is the QA365 Partner Program?',
+      description:
+        'The QA365 Partner Program is an exclusive opportunity for businesses and individuals to leverage QA365’s AI-driven testing platform at no cost. Partners get to use the app for free and collaborate with us. We will handle your onboarding and ticket testing for free. Ones the onboarding is completed, you can lean back and watch your tickets tested automatically.',
+    },
+    {
+      title: 'What are the requirements for becoming a partner?',
+      description:
+        'To become a partner, you need to have a willingness to share feedback. We will handle your onboarding and ticket testing for free.We benefit by improving our app and studying your feedback.',
+    },
+    {
+      title: 'Are there any risks involved?',
+      description:
+        'No, there are absolutely no risks. Joining the QA365 Partner Program is free, and there are no obligations. You can participate as much or as little as you want, and you retain full control over your involvement.',
+    },
+    {
+      title: 'How long does the partner program last?',
+      description:
+        'The program is ongoing! There is no fixed duration. As long as you continue to find value and actively participate, you can remain a partner and enjoy the benefits. When our beta phase is finished, you will receive a lifetime discount for helping us.',
+    },
+    {
+      title: 'Are there any hidden fees for the partner program?',
+      description:
+        'No, there are no hidden fees or costs. The QA365 Partner Program is completely transparent, ensuring you enjoy all the benefits without any unexpected charges.',
+    },
+    {
+      title: 'How many partners can join the program?',
+      description:
+        'Since we will do a lot of work for free, we can only accept a limited number of partners. If our limit is reached, you will have to wait until our app-launch to automate your manual testing.',
+    },
+  ]}
+/>
+
+  <!-- CallToAction Widget *********** -->
+
+    <!-- CTA -->
+    <CallToAction
+        actions={[
+            {
+            variant: 'primary',
+            text: 'Ready To Become A Partner?',
+            href: 'https://calendly.com/qa365/unlock-qa365-first-look', // Replace with your actual demo link
+            target: '_blank',
+            icon: 'tabler:calendar-event',
+            },
+        ]}
+        >
+        <Fragment slot="title">
+            Join Our Partner Program
+        </Fragment>
+        <Fragment slot="subtitle">
+            Discover how we can transform your testing process.<br class="hidden md:inline" /> Start saving time and improving quality now!
+        </Fragment>
+    </CallToAction>
+</Layout>

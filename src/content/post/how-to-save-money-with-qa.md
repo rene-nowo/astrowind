@@ -1,6 +1,6 @@
 ---
 draft: false
-publishDate: 2024-11-07T15:39:00+02:00
+publishDate: 2024-11-22T15:39:00+02:00
 title: How to save Money with Quality Assurance
 snippet: saving money with software quality assurance
 image: https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?&fit=crop&w=430&h=240

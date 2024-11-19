@@ -15,6 +15,10 @@ export const headerData = {
       href: getPermalink('/pricing'),
     },
     {
+      text: 'Partners',
+      href: getPermalink('/partners'),
+    },
+    {
       text: 'Blog',
       links: [
         {
@@ -23,7 +27,7 @@ export const headerData = {
         },
         {
           text: 'How QA365 Works',
-          href: getPermalink('how-does-qa365-work', 'post'),
+          href: getPermalink('how-qa365-works', 'post'),
         },
         {
           text: 'Saving Money With QA',
@@ -31,13 +35,13 @@ export const headerData = {
         },
         {
           text: 'How We Leveraged Our Frontend Testing',
-          href: getPermalink('how-to-save-money-with-qa', 'post'),
+          href: getPermalink('how-ai-leverages-frontend-testing', 'post'),
         }
       ],
     },
     {
       text: 'Demo',
-      href: getPermalink('how-does-qa365-work', 'post'),
+      href: getPermalink('how-qa365-works', 'post'),
     },
   ],
   actions: [{ text: 'Book A Demo', href: 'https://calendly.com/qa365/unlock-qa365-first-look', target: '_blank' }],
