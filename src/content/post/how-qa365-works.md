@@ -9,7 +9,7 @@ tags:
  - astro
  - tailwindcss
  - frontend
-image1: ""
+image: ~/assets/images/blogs/how-does-qa365-work-hero.png
 ---
 
 ![qa365 demo gif](~/assets/images/qa_demo.gif "QA365 Demo Gif")

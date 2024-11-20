@@ -9,7 +9,7 @@ tags:
  - astro
  - tailwindcss
  - frontend
-image1: ""
+image: ~/assets/images/qa_demo.gif
 ---
 
 

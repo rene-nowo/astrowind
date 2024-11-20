@@ -3,15 +3,13 @@ draft: false
 publishDate: 2024-11-22T15:39:00+02:00
 title: How to save Money with Quality Assurance
 snippet: saving money with software quality assurance
-image: https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?&fit=crop&w=430&h=240
 category: 'Tutorials'
-author: 'Connor Lopez'
+author: 'Rene Nowotny'
 tags: [astro, tailwindcss, frontend]
+image:  ~/assets/images/blogs/how-to-save-money-with-qa-hero.png
 ---
 
 Key Notes
-
-alt="saving money with software quality assurance"
 
 Everybody with thinks Quality Assurance is time-consuming and costly venture, but is it really?
 

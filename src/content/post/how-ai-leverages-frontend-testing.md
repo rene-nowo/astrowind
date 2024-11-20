@@ -6,7 +6,7 @@ author: René Nowotny
 title: How We used AI to leverage our frontend testing process
 category: Tutorials
 snippet: Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti.
-image: https://images.unsplash.com/photo-1593720213428-28a5b9e94613?&fit=crop&w=430&h=240
+image: ~/assets/images/blogs/we-used-ai-to-leverage-our-frontend-testing-proces.png
 tags: 
   - webdev
   - testing
