@@ -1,0 +1,11 @@
+---
+// github.com/rezahedi/rezahedi.dev/blob/main/src/components/TOCHeading.astro
+const { heading } = Astro.props
+---
+
+<li>
+  <a href={'#' + heading.slug}>
+    {heading.text}
+  </a>
+  
+</li>

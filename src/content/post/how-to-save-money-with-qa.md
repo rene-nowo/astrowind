@@ -6,7 +6,7 @@ snippet: saving money with software quality assurance
 category: 'Tutorials'
 author: 'Rene Nowotny'
 tags: [astro, tailwindcss, frontend]
-image:  ~/assets/images/blogs/how-to-save-money-with-qa-hero.png
+image:  ~/assets/images/blogs/how-we-made-qa-profitable-2.png
 ---
 
 Key Notes

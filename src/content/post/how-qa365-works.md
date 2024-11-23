@@ -1,6 +1,7 @@
 ---
 draft: false
 publishDate: 2024-11-22T15:39:00Z
+updateDate: 2024-11-23T15:39:00Z
 author: René Nowotny
 title: How does QA365 work?
 category: Tutorials
@@ -9,16 +10,16 @@ tags:
  - astro
  - tailwindcss
  - frontend
-image: ~/assets/images/blogs/how-does-qa365-work-hero.png
+image: ~/assets/images/blogs/how-does-qa365-work-4.png
 ---
 
+<!---
 ![qa365 demo gif](~/assets/images/qa_demo.gif "QA365 Demo Gif")
+-->
 
 # What does QA365 solve?
 
 Modern software development thrives on speed and efficiency. Yet, when it comes to manual testing, the process is often time-consuming, error-prone, and lacks scalability. QA365 bridges this gap by using Graphs and cutting-edge AI to provide automated, reliable frontend testing.
-
-
 
 ## Why LLMs Like ChatGPT Alone Aren’t Enough
 
@@ -27,6 +28,10 @@ Large Language Models (LLMs), such as ChatGPT, are powerful tools for generating
 - **Contextual Understanding:** Frontend applications are dynamic and interactive, requiring real-time engagement rather than static analysis.
 - **Visual Validation:** Testing isn’t just about functionality; visuals like layouts and animations are crucial for a seamless user experience.
 - **Tool Integration:** A holistic testing process involves not just validating components but pushing actionable results into workflow tools like Jira.
+
+### subheading 1
+
+### subheading 2
 
 ## How does QA365 solves this issue?
 
@@ -39,6 +44,8 @@ QA365 takes frontend testing to the next level with the following features:
 - **Custom Tool Integrations:** Whether you use custom project management tools or CI/CD pipelines, QA365 can integrate seamlessly, adapting to your workflows.
 
 ## QA365 in a few steps explained
+
+![qa365 demo gif](~/assets/images/qa_demo.gif "QA365 Demo Gif")
 
 1. qa365 connects to your ticket system and analyzes your webapp
 2. you create tickets in your ticket system

@@ -3,11 +3,14 @@ import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
 
+
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
+import remarkToc from 'remark-toc';
+import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
@@ -78,7 +81,7 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
+    remarkPlugins: [readingTimeRemarkPlugin,  [remarkToc, { heading: 'toc', maxDepth: 3 } ]],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 

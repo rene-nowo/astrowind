@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import { JSDOM } from 'jsdom';
 
 const generatePermalink = async ({
   id,
@@ -40,6 +41,8 @@ const generatePermalink = async ({
     .join('/');
 };
 
+
+
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
   const { id, slug: rawSlug = '', data } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
@@ -57,7 +60,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
+  const slug = cleanSlug(rawSlug); 
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
@@ -73,32 +76,58 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     title: tag,
   }));
 
+
+  function extractHeadings(body: string): Array<{ depth: number; slug: string; text: string }> {
+    const headings: Array<{ depth: number; slug: string; text: string }> = [];
+  
+    // Split the body content into lines
+    const lines = body.split('\n');
+  
+    // Process each line to find headings
+    lines.forEach((line) => {
+      const match = line.match(/^(#+)\s+(.*)/); // Match lines starting with '#' and followed by text
+      if (match) {
+        const depth = match[1].length; // Number of '#' characters
+        const text = match[2].trim(); // Text after '#'
+        const slug = text
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '') // Remove non-alphanumeric characters
+          .replace(/\s+/g, '-'); // Replace spaces with dashes
+  
+        headings.push({ depth, slug, text });
+      }
+    });
+  
+    return headings;
+  }
+
+  const headings = extractHeadings(post.body); // Extract headings from rendered HTML content
+
   return {
-    id: id,
-    slug: slug,
+    id,
+    slug,
     permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
 
-    publishDate: publishDate,
-    updateDate: updateDate,
+    publishDate,
+    updateDate,
 
-    title: title,
-    excerpt: excerpt,
-    image: image,
+    title,
+    excerpt,
+    image,
 
-    category: category,
-    tags: tags,
-    author: author,
+    category,
+    tags,
+    author,
 
-    draft: draft,
+    draft,
 
     metadata,
-
-    Content: Content,
-    // or 'content' in case you consume from API
-
+    Content, // or 'content' in case you consume from API
     readingTime: remarkPluginFrontmatter?.readingTime,
+    headings, // Add headings to the normalized post object
   };
 };
+
 
 const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
@@ -182,14 +211,16 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
   });
 };
 
-/** */
-export const getStaticPathsBlogPost = async () => {
+/** */export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
   return (await fetchPosts()).flatMap((post) => ({
     params: {
       blog: post.permalink,
     },
-    props: { post },
+    props: {
+      post,
+      headings: post.headings, // Pass headings to props
+    },
   }));
 };
 

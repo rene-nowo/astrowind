@@ -1,10 +1,10 @@
 ---
+import TOC from './TOC.astro';
 import { Icon } from 'astro-icon/components';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
-
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 
@@ -13,9 +13,16 @@ import type { Post } from '~/types';
 export interface Props {
   post: Post;
   url: string | URL;
+  
 }
 
 const { post, url } = Astro.props;
+
+// Debug headings
+console.log('Astro.props in SinglePost:', { post, url });
+console.log('Astro.props Headings in SinglePost:', {  });
+
+
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -69,7 +76,7 @@ const { post, url } = Astro.props;
       >
         {post.excerpt}
       </p>
-
+      
       {
         post.image ? (
           <Image
@@ -90,10 +97,36 @@ const { post, url } = Astro.props;
         )
       }
     </header>
+
+     <!-- Table of Contents -->
+    {post.headings && post.headings.length > 0 && (
+        <div class="toc-wrapper">
+        
+        <nav class="sticky top-16 bg-gray-50 dark:bg-gray-800 p-4 rounded-md shadow-md">
+          <div class="toc-header">
+            <h2 class="toc-heading">Table of Contents</h2>
+          </div>
+          <div class="toc-list-wrapper">
+            <ul class="toc-list">
+              {post.headings.map((heading) => (
+                <li class="toc-list-item">
+                  <a
+                    href={'#' + heading.slug}
+                  >
+                    {heading.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+        </div>
+        </nav>
+      </div>
+    )}
+
     <div
       class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
     >
-      <slot />
+      <slot class="article-content"/>
     </div>
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />

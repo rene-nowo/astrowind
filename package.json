@@ -34,8 +34,11 @@
     "astro-embed": "^0.7.4",
     "astro-icon": "^1.1.1",
     "dotenv": "^16.4.5",
+    "jsdom": "^25.0.1",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
+    "rehype-accessible-emojis": "^0.3.2",
+    "remark-toc": "^9.0.0",
     "simple-icons": "^13.16.0",
     "unpic": "^3.18.0"
   },
