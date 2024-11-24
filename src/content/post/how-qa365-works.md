@@ -1,7 +1,7 @@
 ---
-draft: false
-publishDate: 2024-11-22T15:39:00Z
-updateDate: 2024-11-23T15:39:00Z
+draft: true
+publishDate: 2024-11-24T15:39:00Z
+updateDate: 2024-11-24T15:39:00Z
 author: René Nowotny
 title: How does QA365 work?
 category: Tutorials
@@ -28,10 +28,6 @@ Large Language Models (LLMs), such as ChatGPT, are powerful tools for generating
 - **Contextual Understanding:** Frontend applications are dynamic and interactive, requiring real-time engagement rather than static analysis.
 - **Visual Validation:** Testing isn’t just about functionality; visuals like layouts and animations are crucial for a seamless user experience.
 - **Tool Integration:** A holistic testing process involves not just validating components but pushing actionable results into workflow tools like Jira.
-
-### subheading 1
-
-### subheading 2
 
 ## How does QA365 solves this issue?
 

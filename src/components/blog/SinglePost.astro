@@ -9,6 +9,7 @@ import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 
 import type { Post } from '~/types';
+import CallToAction from '../widgets/CallToAction.astro';
 
 export interface Props {
   post: Post;
@@ -98,36 +99,32 @@ console.log('Astro.props Headings in SinglePost:', {  });
       }
     </header>
 
-     <!-- Table of Contents -->
-    {post.headings && post.headings.length > 0 && (
-        <div class="toc-wrapper">
-        
-        <nav class="sticky top-16 bg-gray-50 dark:bg-gray-800 p-4 rounded-md shadow-md">
-          <div class="toc-header">
-            <h2 class="toc-heading">Table of Contents</h2>
-          </div>
-          <div class="toc-list-wrapper">
-            <ul class="toc-list">
-              {post.headings.map((heading) => (
-                <li class="toc-list-item">
-                  <a
-                    href={'#' + heading.slug}
-                  >
-                    {heading.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-        </div>
-        </nav>
-      </div>
-    )}
 
     <div
       class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
     >
       <slot class="article-content"/>
     </div>
+
+    <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a Demo',
+        href: 'https://calendly.com/qa365/unlock-qa365-first-look', // Replace with your actual demo link
+        target: '_blank',
+        icon: 'tabler:calendar-event',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Automate Testing
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Discover how QA365 can transform your testing process.<br class="hidden md:inline" /> Start saving time and improving quality now!
+    </Fragment>
+</CallToAction>
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
       <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />

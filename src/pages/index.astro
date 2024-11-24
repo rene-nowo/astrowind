@@ -1,20 +1,20 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/PageLayout.astro'
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps from '~/components/widgets/Steps3.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero from '~/components/widgets/Hero.astro'
+import Note from '~/components/widgets/Note.astro'
+import Features from '~/components/widgets/Features.astro'
+import Steps from '~/components/widgets/Steps3.astro'
+import Content from '~/components/widgets/Content.astro'
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro'
+import FAQs from '~/components/widgets/FAQs.astro'
+import CallToAction from '~/components/widgets/CallToAction.astro'
 import { Icon } from 'astro-icon/components'
-import { locate } from '@iconify/json';
+import { locate } from '@iconify/json'
 const metadata = {
   title: 'QA365 - Automate Testing',
   ignoreTitleTemplate: true,
-};
+}
 ---
 
 <Layout metadata={metadata}>
@@ -25,22 +25,20 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Sign Up',
-        href: 'https://github.com/onwidget/astrowind',
+        href: 'https://calendly.com/qa365/unlock-qa365-first-look',
         target: '_blank',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Learn more', href: '/how-qa365-works-with-jira' },
     ]}
     image={{ src: '~/assets/images/qa_demo.gif', alt: 'QA Demo GIF' }}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight block">Tired of Slow, Manual Testing?</span> 
+      <span class="text-accent dark:text-white highlight block">Tired of Slow, Manual Testing?</span>
       <span class="hidden sm:inline">Ready to Automate?</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        Automate Testing, Deploy Faster, Build Better Apps
-      </span>
+      <span class="hidden sm:inline"> Automate Testing, Deploy Faster, Build Better Apps </span>
     </Fragment>
   </Hero>
 
@@ -55,76 +53,75 @@ const metadata = {
     tagline="Features"
     title="What you get with QA365"
     subtitle="One of the most professional and comprehensive testing solutions on the market. Let us handle the software testing for you!"
-    items={
-    [
-    {
-    title: 'Automated Testing',
-    description:
-      'Never manually test your application again. QA365 uses cutting-edge software to test your frontend applications.',
-    icon: 'tabler:plug-connected',
-  },
-  {
-    title: 'Reduced Costs',
-    description:
-      'Instead of paying for expensive manual labor, QA365 can automate your testing process for a small fee.',
-    icon: 'tabler:coin-bitcoin',
-  },
+    items={[
+      {
+        title: 'Automated Testing',
+        description:
+          'Never manually test your application again. QA365 uses cutting-edge software to test your frontend applications.',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'Reduced Costs',
+        description:
+          'Instead of paying for expensive manual labor, QA365 can automate your testing process for a small fee.',
+        icon: 'tabler:coin-bitcoin',
+      },
 
-  {
-    title: 'Better Code Quality',
-    description:
-      'Increase your software quality and make testing an integral part of your development process.',
-    icon: 'tabler:crown',
-  },
-  {
-    title: 'More Time',
-    description:
-      'Accelerate development with instant software feedback and eliminate the wait for ticket verification.',
-    icon: 'tabler:clock',
-  },
-  
-  {
-    title: 'Reporting',
-    description:
-      'Gain actionable insights with detailed reports that pinpoint issues and suggest solutions',
-    icon: 'tabler:report',
-  },
-  {
-    title: 'Scalable Solution',
-    description:
-      'We support development teams of all sizes, from startups to large enterprises, ensuring that your testing capabilities grow with your needs.',
-    icon: 'tabler:rocket',
-  },
-]}
+      {
+        title: 'Better Code Quality',
+        description: 'Increase your software quality and make testing an integral part of your development process.',
+        icon: 'tabler:crown',
+      },
+      {
+        title: 'More Time',
+        description:
+          'Accelerate development with instant software feedback and eliminate the wait for ticket verification.',
+        icon: 'tabler:clock',
+      },
+
+      {
+        title: 'Reporting',
+        description: 'Gain actionable insights with detailed reports that pinpoint issues and suggest solutions',
+        icon: 'tabler:report',
+      },
+      {
+        title: 'Scalable Solution',
+        description:
+          'We support development teams of all sizes, from startups to large enterprises, ensuring that your testing capabilities grow with your needs.',
+        icon: 'tabler:rocket',
+      },
+    ]}
   />
-  
+
   <Steps
-  title="Get Your Testing Automated in No Time with QA365"
-  items={[
-    {
-      title: 'Step 1: <span class="font-medium">Book A Call</span>',
-      description:
-        "Create your account and gain immediate access to our platform. <span class='font-bold'>No upfront costs!</span> Our team will personally reach out to guide you through every step.",
-      icon: 'tabler:calendar-stats',
-    },
-    {
-      title: 'Step 2: <span class="font-medium">Automate & Deploy</span>',
-      description:
-        "Sit back and let QA365 handle the testing. Our solution will automatically run your tests, deliver results, and ensure you can deploy with confidence—faster than ever before.",
-      icon: 'tabler:settings-automation',
-    },
-    {
-      title: 'Step 3: <span class="font-medium">Save Time & Money</span>',
-      description:
-        "We’ll continue to offer support, helping you refine your testing workflows as your projects grow. Your success is our priority.",
-      icon: 'tabler:businessplan',
-    },
-  ]}
+    title="Get Your Testing Automated in No Time with QA365"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Book A Call</span>',
+        description:
+          "Create your account and gain immediate access to our platform. <span class='font-bold'>No upfront costs!</span> Our team will personally reach out to guide you through every step.",
+        icon: 'tabler:calendar-stats',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Automate & Deploy</span>',
+        description:
+          'Sit back and let QA365 handle the testing. Our solution will automatically run your tests, deliver results, and ensure you can deploy with confidence—faster than ever before.',
+        icon: 'tabler:settings-automation',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Save Time & Money</span>',
+        description:
+          'We’ll continue to offer support, helping you refine your testing workflows as your projects grow. Your success is our priority.',
+        icon: 'tabler:businessplan',
+      },
+    ]}
   />
 
   <!-- Steps Supported Stacks ****************** -->
   <div class="mt-16">
-    <h2 class="text-center text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Works with your technologies</h2>
+    <h2 class="text-center text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Works with your technologies
+    </h2>
     <div class="marquee marquee--8">
       <Icon class="size-8 md:size-12 marquee__item" name="logos:react" />
       <Icon class="size-8 md:size-12 marquee__item" name="logos:vue" />
@@ -138,10 +135,9 @@ const metadata = {
       <Icon class="size-8 md:size-14 marquee__item" name="logos:css-3" />
       <Icon class="size-8 md:size-14 marquee__item" name="logos:tailwindcss-icon" />
       <Icon class="size-8 md:size-14 marquee__item" name="logos:nextjs-icon" />
-  </div>
+    </div>
   </div>
 
-  
   <Content
     isReversed
     tagline="Inside"
@@ -160,7 +156,7 @@ const metadata = {
       {
         title: 'Customizable Testing',
         description: `Define and fine-tune your testing criteria to fit the specific needs of your application, ensuring tailored testing for every project.`,
-      }
+      },
     ]}
     image={{
       src: '~/assets/images/hero/rocket_1280.png',
@@ -177,73 +173,7 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-  
-  
 
-  <!-- Features2 Widget ************** -->
-
- <!--  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
--->
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
@@ -252,8 +182,7 @@ const metadata = {
                         Each article is crafted to enhance your understanding of AI-driven testing, integration with tools like Jira, and other essential knowledge for streamlining your QA processes.
                         Dive in and stay updated on the latest advancements in software testing with QA365.
                 `}
-/>
-
+  />
 
   <!-- FAQs Widget ******************* -->
 
@@ -304,7 +233,6 @@ const metadata = {
           'By providing instant feedback and removing the wait time for ticket verification, QA365 enables developers to address issues on the spot, speeding up the development cycle and improving overall product quality.',
       },
     ]}
-
   />
 
   <!-- Stats Widget ******************
@@ -335,111 +263,113 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Discover how QA365 can transform your testing process.<br class="hidden md:inline" /> Start saving time and improving quality now!
+      Discover how QA365 can transform your testing process.<br class="hidden md:inline" /> Start saving time and improving
+      quality now!
     </Fragment>
-</CallToAction>
-
+  </CallToAction>
 </Layout>
 
 <style>
   .marquee {
-  display: flex;
-  block-size: var(--marquee-item-height);
-  margin-block: var(--marquee-item-height);
-  position: relative;
-  overflow-x: hidden;
-  mask-image: linear-gradient(
-    to right,
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 1) 20%,
-    hsl(0 0% 0% / 1) 80%,
-    hsl(0 0% 0% / 0)
-  );
-}
-
-.marquee--8 {
-  --marquee-item-width: 80px;
-  --marquee-item-height: 80px;
-  --marquee-duration: 20s;
-  --marquee-items: 12;
-}
-
-.marquee__item {
-  --marquee-item-offset: max(
-    calc(var(--marquee-item-width) * var(--marquee-items)),
-    calc(100% + var(--marquee-item-width))
-  );
-  --marquee-delay: calc(var(--marquee-duration) / var(--marquee-items) * (var(--marquee-items) - var(--marquee-item-index)) * -1);
-  position: absolute;
-  inset-inline-start: var(--marquee-item-offset);
-  transform: translateX(-50%);
-  animation: go linear var(--marquee-duration) var(--marquee-delay, 0s) infinite;
-}
-
-.marquee__item:nth-child(4n) {
-  border-top-right-radius: 1rem;
-}
-
-.marquee__item:nth-child(4n + 1) {
-  border-bottom-right-radius: 1rem;
-}
-
-.marquee__item:nth-child(4n + 2) {
-  border-bottom-left-radius: 1rem;
-}
-
-.marquee__item:nth-child(4n + 3) {
-  border-top-left-radius: 1rem;
-}
-
-.marquee--8 .marquee__item:nth-of-type(1) {
-  --marquee-item-index: 1;
-}
-
-.marquee--8 .marquee__item:nth-of-type(2) {
-  --marquee-item-index: 2;
-}
-
-.marquee--8 .marquee__item:nth-of-type(3) {
-  --marquee-item-index: 3;
-}
-
-.marquee--8 .marquee__item:nth-of-type(4) {
-  --marquee-item-index: 4;
-}
-
-.marquee--8 .marquee__item:nth-of-type(5) {
-  --marquee-item-index: 5;
-}
-
-.marquee--8 .marquee__item:nth-of-type(6) {
-  --marquee-item-index: 6;
-}
-
-.marquee--8 .marquee__item:nth-of-type(7) {
-  --marquee-item-index: 7;
-}
-
-.marquee--8 .marquee__item:nth-of-type(8) {
-  --marquee-item-index: 8;
-}
-.marquee--8 .marquee__item:nth-of-type(9) {
-  --marquee-item-index: 9;
-}
-.marquee--8 .marquee__item:nth-of-type(10) {
-  --marquee-item-index: 10;
-}
-.marquee--8 .marquee__item:nth-of-type(11) {
-  --marquee-item-index: 11;
-}
-
-.marquee--8 .marquee__item:nth-of-type(12) {
-  --marquee-item-index: 12;
-}
-
-@keyframes go {
-  to {  
-    inset-inline-start: calc(var(--marquee-item-width) * -1);
+    display: flex;
+    block-size: var(--marquee-item-height);
+    margin-block: var(--marquee-item-height);
+    position: relative;
+    overflow-x: hidden;
+    mask-image: linear-gradient(
+      to right,
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 20%,
+      hsl(0 0% 0% / 1) 80%,
+      hsl(0 0% 0% / 0)
+    );
   }
-}
+
+  .marquee--8 {
+    --marquee-item-width: 80px;
+    --marquee-item-height: 80px;
+    --marquee-duration: 20s;
+    --marquee-items: 12;
+  }
+
+  .marquee__item {
+    --marquee-item-offset: max(
+      calc(var(--marquee-item-width) * var(--marquee-items)),
+      calc(100% + var(--marquee-item-width))
+    );
+    --marquee-delay: calc(
+      var(--marquee-duration) / var(--marquee-items) * (var(--marquee-items) - var(--marquee-item-index)) * -1
+    );
+    position: absolute;
+    inset-inline-start: var(--marquee-item-offset);
+    transform: translateX(-50%);
+    animation: go linear var(--marquee-duration) var(--marquee-delay, 0s) infinite;
+  }
+
+  .marquee__item:nth-child(4n) {
+    border-top-right-radius: 1rem;
+  }
+
+  .marquee__item:nth-child(4n + 1) {
+    border-bottom-right-radius: 1rem;
+  }
+
+  .marquee__item:nth-child(4n + 2) {
+    border-bottom-left-radius: 1rem;
+  }
+
+  .marquee__item:nth-child(4n + 3) {
+    border-top-left-radius: 1rem;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(1) {
+    --marquee-item-index: 1;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(2) {
+    --marquee-item-index: 2;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(3) {
+    --marquee-item-index: 3;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(4) {
+    --marquee-item-index: 4;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(5) {
+    --marquee-item-index: 5;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(6) {
+    --marquee-item-index: 6;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(7) {
+    --marquee-item-index: 7;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(8) {
+    --marquee-item-index: 8;
+  }
+  .marquee--8 .marquee__item:nth-of-type(9) {
+    --marquee-item-index: 9;
+  }
+  .marquee--8 .marquee__item:nth-of-type(10) {
+    --marquee-item-index: 10;
+  }
+  .marquee--8 .marquee__item:nth-of-type(11) {
+    --marquee-item-index: 11;
+  }
+
+  .marquee--8 .marquee__item:nth-of-type(12) {
+    --marquee-item-index: 12;
+  }
+
+  @keyframes go {
+    to {
+      inset-inline-start: calc(var(--marquee-item-width) * -1);
+    }
+  }
 </style>

@@ -26,8 +26,8 @@ export const headerData = {
           href: getBlogPermalink(),
         },
         {
-          text: 'How QA365 Works',
-          href: getPermalink('how-qa365-works', 'post'),
+          text: 'How QA365 Works In Jira',
+          href: getPermalink('how-qa365-works-with-jira', 'post'),
         },
         {
           text: 'Saving Money With QA',
@@ -52,17 +52,34 @@ export const footerData = {
     {
       title: 'Product',
       links: [
-        { text: 'Demo', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Security', href: '#' },
+        { text: 'Demo', href: 'https://calendly.com/qa365/unlock-qa365-first-look' },
+        { text: 'Pricing', href: '/pricing' },
+        { text: 'Partners', href: '/partners' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { text: 'Contact Us', href: '#' },
-        { text: 'Schedule a Demo', href: '#' },
+        { text: 'Contact Us', href: '/contact' },
+        { text: 'Schedule a Demo', href: 'https://calendly.com/qa365/unlock-qa365-first-look' },
        
+      ],
+    },
+    {
+      title: 'Blog Articles',
+      links: [
+        {
+          text: 'How QA365 Works In Jira',
+          href: getPermalink('how-qa365-works-with-jira', 'post'),
+        },
+        {
+          text: 'Saving Money With QA',
+          href: getPermalink('how-to-save-money-with-qa', 'post'),
+        },
+        {
+          text: 'How We Leveraged Our Frontend Testing',
+          href: getPermalink('how-ai-leverages-frontend-testing', 'post'),
+        }
       ],
     },
     {
